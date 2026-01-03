@@ -1,26 +1,27 @@
 # 000-Core-Concepts.md
 
-This document defines the core concepts of LiteMessage. Each section follows a structured format to clearly communicate definitions, attributes, and decisions.
+This document defines the core domain concepts of LiteMessage. Each section follows a structured format to clearly communicate definitions, attributes, and architectural decisions.
 
 ---
 
 ## Message
 
-**Definition:** A single text message sent between users.
+**Definition:**  
+A single text message sent between users within a conversation.
 
 **Attributes:**
 
 * `id`: string - unique identifier for the message
 * `senderId`: string - user who sent the message
-* `conversationId`: string - the conversation this message belongs to
+* `conversationId`: string - conversation this message belongs to
 * `text`: string - message content
-* `timestamp`: ISO8601 - time message was created
-* `status`: enum(pending, sent, delivered, read, failed) - message lifecycle state
+* `timestamp`: ISO8601 - server-assigned creation time
+* `status`: enum(`pending`, `sent`, `delivered`, `read`, `failed`) - message lifecycle state
 
 **Decisions / Notes:**
 
 * Messages are immutable after sending
-* Messages sent while offline will soft fail
+* Messages sent while offline will fail locally and require user action
 
 ---
 
@@ -32,59 +33,64 @@ This document defines the core concepts of LiteMessage. Each section follows a s
 
 * `id`: string - unique identifier for the conversation
 * `participants`: array of `User.id` - users in the conversation
-* `lastMessageId`: string - id of the most recent message
-* `lastReadMessageId`: string - id of the most recent read message
+* `lastMessageId`: string - most recent message in the conversation
+* `lastReadMessageId`: string - most recent message read by the current user
 
 ---
 
 ## User
 
-**Definition:** An individual using the chat application.
+**Definition:**  
+An individual using the chat application.
 
 **Attributes:**
 
 * `id`: string - unique user identifier
-* `displayName`: string - visible name
-* `email`: string - for login
-* `status`: presence object - presence state
+* `displayName`: string - visible display name
+* `email`: string - used for authentication
+* `status`: `Presence` - current presence information
 
 ---
 
 ## Presence
 
-**Definition:** Online/offline status of a user.
+**Definition:**  
+Online/offline status of a user.
 
 **Attributes:**
 
-* `state`: enum(online, offline) - current presence
-* `lastActive`: timestamp - last known activity
+* `state`: enum(`online`, `offline`) - current presence state
+* `lastActive`: timestamp - last known activity time
 
 **Decisions / Notes:**
 
-* Frequency of presence updates: 10s
+* Presence updates are broadcast every 10 seconds
+* Presence is best-effort and not guaranteed to be accurate in real time
 
 ---
 
 ## Offline vs Online Behavior
 
-**Definition:** How the system behaves when clients lose connectivity.
+**Definition:**  
+Rules governing client behavior when network connectivity is lost or unstable.
 
 **Decisions / Notes:**
 
-* Messages will not leave the input composer while offline
-* If agent disconnects while message in "pending" status, message will fail with option to rectify upon reconnection
-* Upon reconnection, conversation will sync any messages that may have successfully sent
-* Messages that failed locally but succeeded on the server will be updated
-* Messages that failed locally and on the server will have option to retry or cancel
+* Messages do not leave the input composer while the client is offline
+* If a client disconnects while a message is in `pending` state, the message transitions to `failed`
+* Upon reconnection, the client syncs with the server to retrieve any messages that were successfully delivered
+* Messages that failed locally but succeeded on the server are reconciled and updated
+* Messages that failed both locally and on the server present retry or cancel options to the user
 
 ---
 
 ## Real-time vs Eventual Delivery
 
-**Definition:** Guarantees around sending and receiving messages.
+**Definition:**  
+Delivery and ordering guarantees for real-time communication.
 
 **Decisions / Notes:**
 
-* Message delivery guarantee: at-least-once
-* Presence and typing indicator delivery guarantee: best effort
-* Order messages by server assigned timestamps with message id tiebreaker
+* Message delivery guarantee: **at-least-once**
+* Presence and typing indicator delivery guarantee: **best-effort**
+* Messages are ordered using server-assigned timestamps with message ID as a tie-breaker
