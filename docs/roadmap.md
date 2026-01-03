@@ -2,113 +2,113 @@
 
 ## Vision & Strategy
 
-- **Goal:** Create a fully functional chat application on web, desktop, and mobile with seamless cross-platform communication.
+- **Goal:** Create a fully functional chat application on Web, Desktop, and Mobile with seamless cross-platform communication.
 - **Key Metric:** Achieve a fully functional 1:1 chat application with shared core logic across all platforms.
 
 ## Themes & Milestones
 
 ### Phase 0 - Product Definition
 
-- **Objective:** Finalize Project Decisions
-- **Milestone:** Documentation Complete
+- **Objective:** Finalize project decisions and documentation
+- **Milestone:** Documentation completed
 - **Tasks:**
-  - [x] Finalize Roadmap
-  - [ ] Answer core questions:
+  - [x] Finalize roadmap
+  - [ ] Define core concepts:
     - What is a "message"?
     - What is a "conversation"?
-    - What happens offline vs online?
-    - What is real-time vs eventual?
+    - Offline vs online behavior
+    - Real-time vs eventual delivery
   - [ ] Finalize all documentation
-  - [ ] Define Feature List
-  - [ ] Define Data Models
-  - [ ] Define Platform Responsibility Boundaries
+  - [ ] Define feature list
+  - [ ] Define data models
+  - [ ] Define platform responsibility boundaries
 
 ### Phase 1 - Architecture & Scope Definition
 
-- **Objective:** Define Scope, Message Lifecycle, API Contracts, and Data Models
-- **Milestone:** Data Types Defined
+- **Objective:** Define scope, message lifecycle, API contracts, and data models
+- **Milestone:** Data types and contracts defined
 - **Tasks:**
   - [ ] Backend
-    - [ ] Create REST Endpoints
-    - [ ] Identify WebSocket Events
-    - [ ] Define Auth Model
-    - [ ] Create API Contracts
+    - [ ] Create REST endpoints
+    - [ ] Identify WebSocket events
+    - [ ] Define auth model
+    - [ ] Draft API contracts
   - [ ] Platforms
-    - [ ] Create Shared Interfaces
-    - [ ] Define State Management
-    - [ ] Define Message Lifecycle
-    - [ ] Define Platform Boundaries
+    - [ ] Create shared interfaces
+    - [ ] Define state management
+    - [ ] Define message lifecycle
+    - [ ] Define platform boundaries
 
 ### Phase 2 - Backend
 
-- **Objective:** Implement Server Backend
-- **Milestone:** Backend API Operational
+- **Objective:** Implement server backend
+- **Milestone:** Backend API operational
 - **Tasks:**
-  - [ ] Implement User Authorization
-  - [ ] Implement Conversation Creation
-  - [ ] Implement Message Persistence
-  - [ ] Set up WebSocket Server
+  - [ ] Implement user authorization
+  - [ ] Implement conversation creation
+  - [ ] Implement message persistence
+  - [ ] Set up WebSocket server
 
 ### Phase 3 - Shared Core Library
 
-- **Objective:** Create Shared Core Functionality
-- **Milestone:** Core Logic Functional
+- **Objective:** Implement shared core functionality
+- **Milestone:** Core logic functional
 - **Tasks:**
-  - [ ] Implement Send and Receive Messages
-  - [ ] Implement Automatic Reconnection
-  - [ ] Implement Pagination
+  - [ ] Implement sending and receiving messages
+  - [ ] Implement automatic reconnection
+  - [ ] Implement message pagination
 
 ### Phase 4 - Web Client
 
-- **Objective:** Implement Web Client
-- **Milestone:** Web Client Functional
+- **Objective:** Implement web client
+- **Milestone:** Web client functional
 - **Tasks:**
-  - [ ] Conversation List
-  - [ ] Message List
-  - [ ] Input Composer
-  - [ ] Online Presence Indicator
+  - [ ] Implement conversation list
+  - [ ] Implement message list
+  - [ ] Implement input composer
+  - [ ] Implement online presence indicator
 
 ### Phase 5 - Desktop Client
 
-- **Objective:** Implement Desktop Client
-- **Milestone:** Desktop Client Functional
+- **Objective:** Implement desktop client
+- **Milestone:** Desktop client functional
 - **Tasks:**
-  - [ ] Wrap Web Client in Electron
-  - [ ] Minimize to System Tray
-  - [ ] Implement Notifications
-  - [ ] Set up IPC Hooks
+  - [ ] Wrap web client in Electron
+  - [ ] Implement system tray minimization
+  - [ ] Implement notifications
+  - [ ] Set up IPC hooks
 
 ### Phase 6 - Mobile Client
 
-- **Objective:** Implement Mobile Client
-- **Milestone:** Mobile Client Functional
+- **Objective:** Implement mobile client
+- **Milestone:** Mobile client functional
 - **Tasks:**
-  - [ ] UI Implementation
-  - [ ] Background Refresh
-  - [ ] Push Notifications
-  - [ ] Offline Caching
-  - [ ] Battery Optimization
+  - [ ] Implement UI
+  - [ ] Implement background refresh
+  - [ ] Implement push notifications
+  - [ ] Implement offline caching
+  - [ ] Optimize for battery usage
 
 ### Phase 7 - Cross-Platform Polish
 
-- **Objective:** Final Polish Across Platforms
-- **Milestone:** UI Consistency Achieved
+- **Objective:** Finalize UI and UX across platforms
+- **Milestone:** UI consistency achieved
 - **Tasks:**
-  - [ ] Ensure Consistent Message Ordering
-  - [ ] Implement Read Receipts
-  - [ ] Implement Typing Indicators
-  - [ ] Improve Reconnection UX
+  - [ ] Ensure consistent message ordering
+  - [ ] Implement read receipts *(optional/advanced)*
+  - [ ] Implement typing indicators *(optional/advanced)*
+  - [ ] Improve reconnection UX
 
 ### Phase 8 - Final Testing
 
-- **Objective:** Complete Testing and QA
-- **Milestone:** All Tests Passed
+- **Objective:** Complete testing and QA
+- **Milestone:** All tests passed
 - **Tasks:**
-  - [ ] Test Network Dropouts
-  - [ ] Handle Duplicate Messages
-  - [ ] Check Clock Skew
-  - [ ] Handle Race Conditions
-  - [ ] Perform Load Testing
+  - [ ] Test network dropouts
+  - [ ] Handle duplicate messages
+  - [ ] Verify clock skew handling
+  - [ ] Test race conditions
+  - [ ] Perform load testing
 
 ## Legend/Key
 
