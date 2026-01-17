@@ -13,14 +13,14 @@
 - **Milestone:** Documentation completed
 - **Tasks:**
   - [x] Finalize roadmap
-  - [ ] Define core concepts:
+  - [x] Define core concepts: *(see `000-core-concepts.md`)*
     - What is a "message"?
     - What is a "conversation"?
     - Offline vs online behavior
     - Real-time vs eventual delivery
   - [ ] Finalize all documentation
   - [ ] Define feature list
-  - [ ] Define data models
+  - [x] Define data models *(see `001-data-models.md`)*
   - [ ] Define platform responsibility boundaries
 
 ### Phase 1 - Architecture & Scope Definition
@@ -28,15 +28,15 @@
 - **Objective:** Define scope, message lifecycle, API contracts, and data models
 - **Milestone:** Data types and contracts defined
 - **Tasks:**
-  - [ ] Backend
-    - [ ] Create REST endpoints
-    - [ ] Identify WebSocket events
-    - [ ] Define auth model
-    - [ ] Draft API contracts
+  - [x] Backend *(see `002-api-contracts.md`, `004-database-schema.md`)*
+    - [x] Create REST endpoints
+    - [x] Identify WebSocket events
+    - [x] Define auth model
+    - [x] Draft API contracts
   - [ ] Platforms
     - [ ] Create shared interfaces
-    - [ ] Define state management
-    - [ ] Define message lifecycle
+    - [x] Define state management *(see `003-message-lifecycle.md`)*
+    - [x] Define message lifecycle *(see `003-message-lifecycle.md`)*
     - [ ] Define platform boundaries
 
 ### Phase 2 - Backend

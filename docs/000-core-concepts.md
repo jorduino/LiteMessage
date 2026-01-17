@@ -48,7 +48,7 @@ An individual using the chat application.
 * `id`: string - unique user identifier
 * `displayName`: string - visible display name
 * `email`: string - used for authentication
-* `status`: `Presence` - current presence information
+* `presence`: `Presence` - current presence information
 
 ---
 
