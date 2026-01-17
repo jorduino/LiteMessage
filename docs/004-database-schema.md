@@ -1,4 +1,4 @@
-# 003-Database-Schema.md
+# 004-Database-Schema.md
 
 This document defines the PostgreSQL database schema for LiteMessage. The schema implements the data models from `001-data-models.md` and supports the API operations defined in `002-api-contracts.md`.
 
