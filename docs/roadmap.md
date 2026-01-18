@@ -21,7 +21,7 @@
   - [ ] Finalize all documentation
   - [x] Define feature list *(see `005-feature-list.md`)*
   - [x] Define data models *(see `001-data-models.md`)*
-  - [ ] Define platform responsibility boundaries
+  - [x] Define platform responsibility boundaries
 
 ### Phase 1 - Architecture & Scope Definition
 
